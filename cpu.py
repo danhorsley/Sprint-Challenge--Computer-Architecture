@@ -256,7 +256,8 @@ class CPU:
             elif ir == 0b01001000:
                 #PRA
                 #print('PRA check',self.reg[operand_a])
-                print(chr(self.reg[operand_a]))
+                #print(chr(self.reg[operand_a]))
+                print(chr(self.reg[operand_a]),end='')
                 self.pc +=2
             elif ir == 0b01000111:
                 #PRN
