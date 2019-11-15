@@ -129,7 +129,7 @@ class CPU:
             if not self.stopmoreinterrupts:
                 if msvcrt.kbhit():
                     self.ram[0xF4] = ord(msvcrt.getch())
-                    print('key trigger',chr(self.ram[0xF4]),'**********',self.ram[0xF4])
+                    #print('key trigger',chr(self.ram[0xF4]),'**********',self.ram[0xF4])
                     self.reg[6] = 0b00000010
                     self.stopmoreinterrupts = True
             #check timer
