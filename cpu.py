@@ -283,12 +283,12 @@ class CPU:
                 #ST
                 self.ram[self.reg[operand_a]] = self.reg[operand_b]
                 self.pc +=3
-
-            #elif ir == 0b10000100:
-                
-                # timer interrupt
             
-            #print('loop done')    
+            elif ir == 0b10001111:
+                #ADDI - add an immediate value to a register
+                self.reg[operand_a] = self.reg[operand_a] + operand_b
+                self.pc +=3
+
         exit()
 
         
