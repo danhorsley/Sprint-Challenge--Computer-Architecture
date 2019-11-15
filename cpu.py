@@ -171,7 +171,7 @@ class CPU:
             operand_b = self.ram_read(self.pc+2)
             if self.errorcode == f'pc{self.pc}ir{ir}a{operand_a}b{operand_b}':
                 self.pc='HALT'
-            #print('flag',bin(self.FL),'pc',self.pc,'ir',bin(ir),'a',operand_a,'b',operand_b,bin(self.reg[operand_a]))
+            #print('flag',bin(self.FL),'pc',self.pc,'ir',bin(ir),'a',operand_a,'b',operand_b)#,bin(self.reg[operand_a]))
             self.errorcode = f'pc{self.pc}ir{ir}a{operand_a}b{operand_b}'
             if ((ir >>5 ) % 0b10) == 0b1 :
                 #print('ALU trigger')  ## USE ALU
@@ -288,6 +288,8 @@ class CPU:
                 #ADDI - add an immediate value to a register
                 self.reg[operand_a] = self.reg[operand_a] + operand_b
                 self.pc +=3
+
+
 
         exit()
 
